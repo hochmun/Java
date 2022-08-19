@@ -12,6 +12,7 @@ public class _05 {
 		Scanner sc = new Scanner(System.in);
 		int H = sc.nextInt();
 		int M = sc.nextInt();
+		sc.close();
 		M -= 45;
 		if(M < 0) {
 			H -= 1;

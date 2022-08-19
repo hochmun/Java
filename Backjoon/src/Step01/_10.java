@@ -16,6 +16,7 @@ public class _10 {
 		int d = 2 - sc.nextInt();
 		int e = 2 - sc.nextInt();
 		int f = 8 - sc.nextInt();
+		sc.close();
 		System.out.println(a + " " + b + " " + c + " " + d + " " + e + " " + f);
 	}
 }

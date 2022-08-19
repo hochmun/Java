@@ -13,6 +13,7 @@ public class _06 {
 		int A = sc.nextInt();
 		int B = sc.nextInt();
 		int C = sc.nextInt();
+		sc.close();
 		B += C;
 		while(B>59) {
 			A += 1;

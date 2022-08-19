@@ -12,6 +12,7 @@ public class _12 {
 		Scanner sc = new Scanner(System.in);
 		int a = sc.nextInt();
 		int b = sc.nextInt();
+		sc.close();
 		int c = b / 100;
 		int d = b/10 - c*10;
 		int e = b - c*100 - d*10;

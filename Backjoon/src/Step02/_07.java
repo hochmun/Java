@@ -13,9 +13,22 @@ public class _07 {
 		int a = sc.nextInt();
 		int b = sc.nextInt();
 		int c = sc.nextInt();
+		sc.close();
 		int x;
 		if(a == b && b == c) {
-			
+			x = 10000 + a * 1000;
+		} else if (a == b && !(a == c)) {
+			x = 1000 + a * 100;
+		} else if (a == c && !(a == b)) {
+			x = 1000 + a * 100;
+		} else if (b == c && !(b == a)) {
+			x = 1000 + b * 100;
+		} else {
+			int max = a;
+			if(b > max) max = b;
+			if(c > max) max = c;
+			x = max * 100;
 		}
+		System.out.println(x);
 	}
 }
