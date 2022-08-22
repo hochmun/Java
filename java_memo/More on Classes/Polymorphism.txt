@@ -1,0 +1,111 @@
+다형성 Polymorphism
+
+다형성(Polymorphism)은 "다양한 형태를 가진다"는 개념을 의미하며, 상속을 통해 서로 연결된 클래스의 계층이 있을 때 발생합니다.
+멤버 메서드를 호출하면 메서드를 호출하는 개체의 유형에 따라 다른 구현이 실행됩니다.
+다음은 예입니다. Dog 및 Cat은 Animal 클래스에서 상속된 클래스입니다. 각 클래스에는 자체적으로 makeSound() 메서드가 구현되어 있습니다.
+
+class Animal {
+  public void makeSound() {
+    System.out.println("Grr...");
+  }
+}
+class Cat extends Animal {
+  public void makeSound() {
+    System.out.println("Meow");
+  }
+}
+class Dog extends Animal {
+  public void makeSound() {
+    System.out.println("Woof");
+  }
+}
+
+모든 Cat 및 Dog 개체는 Animal 개체이므로 main 에서 다음을 수행할 수 있습니다 .
+
+public static void main(String[ ] args) {
+  Animal a = new Dog();
+  Animal b = new Cat();
+}
+
+Animal 유형의 두 참조 변수를 만들고 Cat 및 Dog 개체를 가리켰습니다.
+이제 makeSound() 메서드를 호출할 수 있습니다.
+
+class Animal {
+    public void makeSound() {
+        System.out.println("Grr...");
+    }
+}
+class Cat extends Animal {
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+class Dog extends Animal {
+    public void makeSound() {
+        System.out.println("Woof");
+    }
+}
+
+class Program {
+    public static void main(String args[ ]) {
+        Animal a = new Dog();
+        Animal b = new Cat();
+        
+        a.makeSound(); // Woof
+        b.makeSound(); // Meow
+    }
+}
+
+참조 변수 a 에는 Dog 객체가 포함되어 있으므로 Dog 클래스의 makeSound() 메서드가 호출됩니다. b 변수
+에도 동일하게 적용됩니다 .
+
+이것은 실제로 하위 클래스의 개체가 포함되어 있다는 사실을 모른 채 Animal 변수 를 사용할 수 있음을 보여줍니다 . 이것은 슈퍼클래스의 여러 서브클래스가 있을 때 매우 유용합니다.
+
+예문:
+
+차량은 어떤 에너지원이 차량에 동력을 공급하는지에 따라 분류할 수 있습니다. 귀하에게 제공되는 프로그램에는 Vehicle, ElectricVehicle 및 HybridVehicle의 3가지 차량 등급이 있습니다.
+ElectricVehicle 및 HybridVehicle 클래스는 Vehicle 클래스에서 상속됩니다.
+주어진 호출이 올바르게 작동하도록 상속된 클래스에서 메서드 resource()를 다시 구현하여 프로그램을 완료합니다.
+
+하위 클래스는 요구 사항에 따라 상위 클래스 메서드를 구현할 수 있습니다.
+
+class Main {
+   public static void main(String[] args) {
+       
+       Vehicle vehicle = new Vehicle();
+       Vehicle electric = new ElectricVehicle();
+       Vehicle hybrid = new HybridVehicle();
+       
+       //calls
+       vehicle.start();
+       vehicle.resource();
+       electric.start();
+       electric.resource();
+       hybrid.start();
+       hybrid.resource();
+   }
+}
+class Vehicle{
+    public void start(){
+        System.out.println("Starting");
+    }
+    public void resource(){
+        System.out.println("I use petrol");
+    }
+}
+
+class ElectricVehicle extends Vehicle{
+    /*reimplement resource() method 
+    to output "I use electricity"*/
+    public void resource() {
+        System.out.println("I use electricity");
+    }
+}
+
+class HybridVehicle extends Vehicle{
+    /*reimplement resource() method 
+    to output "I use both petrol and electricity"*/
+    public void resource() {
+        System.out.println("I use both petrol and electricity");
+    }
+}

@@ -1,0 +1,110 @@
+메서드 재정의 Method Overriding
+
+이전 단원에서 보았듯이 하위 클래스는 하위 클래스 유형에 특정한 동작을 정의할 수 있습니다. 즉, 하위 클래스는 요구 사항에 따라 상위 클래스 메서드를 구현할 수 있습니다.
+이 기능을 메서드 재정의라고 합니다.
+
+예시:
+class Animal {
+    public void makeSound() {
+        System.out.println("Grr...");
+    }
+}
+class Cat extends Animal {
+    public void makeSound() {
+        System.out.println("Meow");
+    }
+}
+
+class Program {
+    public static void main(String[] args) {
+        Cat c = new Cat();
+        c.makeSound(); // Meow
+    }
+}
+
+위의 코드에서 Cat 클래스는 상위 클래스 Animal의 makeSound() 메서드를 재정의합니다.
+
+메서드 재정의 규칙:
+- 반환 유형과 인수가 동일해야 합니다.
+- 접근 수준은 재정의된 메서드의 접근 수준보다 더 제한적일 수 없습니다(예: 슈퍼클래스 메서드가 공개로 선언된 경우 하위 클래스에서 재정의하는 메서드는 비공개도 보호도 될 수 없음)
+- final 또는 static으로 선언된 메서드는 재정의할 수 없습니다.
+- 메서드를 상속할 수 없으면 재정의할 수 없습니다.
+- 생성자는 재정의할 수 없습니다.
+
+메서드 재정의는 런타임 다형성runtime polymorphism 이라고도 합니다 .
+
+---------------------------------------
+Method Overloading
+
+메서드의 이름은 같지만 매개변수가 다른 경우를 메서드 오버로딩이라고 합니다.
+이것은 다른 유형의 매개변수에 대해 동일한 메소드 기능이 필요할 때 매우 유용할 수 있습니다.
+다음 예제에서는 두 매개변수의 최대값을 반환하는 메서드를 보여줍니다.
+
+int max(int a, int b) {
+  if(a > b) {
+    return a;
+  }
+  else {
+    return b;
+  }
+}
+
+위에 표시된 방법은 정수 유형의 매개변수에 대해서만 작동합니다 .
+그러나 double 에도 사용할 수 있습니다. 이를 위해서는 max 메소드 를 오버로드해야 합니다 
+
+class Program {
+    static double max(double a, double b) {
+        if(a > b) {
+            return a;
+        }
+        else {
+            return b;
+        }
+    }
+    static int max(int a, int b) {
+        if(a > b) {
+            return a;
+        }
+        else {
+            return b;
+        }
+    }
+
+    public static void main(String[] args) {        
+        System.out.println(max(8, 17)); // 17
+        System.out.println(max(3.14, 7.68)); // 7.68
+    }
+
+}
+
+이제 우리의 max 메소드는 double에서도 작동합니다.
+오버로드된 메서드에는 다른 인수 목록이 있어야 합니다. 매개변수는 유형, 번호 또는 둘 다에서 달라야 합니다.
+
+메소드 오버로딩의 또 다른 이름은 컴파일 타임 다형성입니다.
+
+예문:
+doubleTheValue() 메서드를 완료하고 오버로드하여 변수 및 b 변수의 두 배 값을 계산합니다.
+
+오버로딩하는 동안 매개변수의 값 유형에 주의하십시오.
+
+public class Main {
+    public static void main(String[] args) {
+        
+        int a = 5;
+        double b = 10.2;
+        
+        System.out.println(doubleTheValue(a));
+        System.out.println(doubleTheValue(b));
+                
+    }
+    //complete the method for integer value type
+    public static int doubleTheValue(int a) {
+        a *= 2;
+        return a;
+    }
+    //overload the method for double value type
+    public static double doubleTheValue(double a) {
+        a *= 2;
+        return a;
+    }
+}

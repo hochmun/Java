@@ -1,0 +1,156 @@
+public class Program {
+    public static void main(String[] args) {
+        int x = 3;
+        while(x > 0) {
+            System.out.println(x);
+            x--;
+        }
+    }
+}
+
+- 명령문 x--; 가 없으면 루프는 무한 반복한다.
+
+public class Program {
+    public static void main(String[] args) {
+        int x = 6;
+
+        while( x < 10 )
+        {
+            System.out.println(x);
+            x++;
+        }
+        System.out.println("Loop ended");
+    }
+}
+
+- 식이 테스트 되고 결과가 거짓이면 루프문을 건너뛰고 while 루프 이후의 첫번째 문이 실행됨.
+
+import java.util.Scanner;
+
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scanner = new Scanner(System.in);
+            int  number = scanner.nextInt();
+            int fact = 1;
+            while( number > 0 ){
+                fact *= number--;
+            }
+            System.out.println(fact);
+    }
+}
+
+while roop문을 이용한 팩토리얼 계산기
+
+--------------------------------------------
+
+for (initialization 초기화; condition 조건; increment증가/decrement감소) {
+   statement(s)문
+}
+
+for loop를 사용하면 특정 횟수만큼 실행해야하는 루프를 효율적으로 작성할 수 있다.
+
+초기화 : 루프가 시작되는 동안 표현식이 한 번만 실행됩니다 .
+조건 : 루프가 반복될 때마다 평가됩니다. 루프는 이 조건이 false를 반환할 때까지 명령문을 반복적으로 실행합니다.
+증가/감소 : 루프의 각 반복 후에 실행됩니다. 다음 예에서는 1에서 5까지의 숫자를 인쇄합니다
+
+public class Program {
+    public static void main(String[] args) {
+        for(int x = 1; x <=5; x++) {
+            System.out.println(x);
+        }
+    }
+}
+
+import java.util.Scanner;
+
+
+public class Program
+{
+    public static void main(String[] args) {
+	   Scanner scanner = new Scanner(System.in);
+       int n = scanner.nextInt();
+       for(int i = 0; i < n; i++){
+           System.out.println("Welcome");
+       }
+	}
+}
+
+----------------------------------------
+
+do...while loop문
+
+do~while loop문은 do~while loop가 한 번 이상 실행 된다는 점을 제외하고는 while loop와 유사하다.
+
+public class Program {
+    public static void main(String[] args) {
+        int x = 1;
+        do {
+            System.out.println(x);
+            x++;
+        } while(x < 5);
+    }
+}
+
+loop조건이 끝에 나타나므로 루프의 명령문이 테스트되기 전에 한 번 실행된다.
+조건이 거짓인 경우에도 한번 실행된다.
+
+import java.util.Scanner;
+public class Program
+{
+    public static void main(String[] args) {
+	   Scanner read = new Scanner(System.in);
+           int password;
+           do {
+               System.out.println("Write password");
+               password = read.nextInt();
+           } while(password != 8819);
+          
+	}
+}
+
+public class Program {
+    public static void main(String[] args) {
+        int x = 1;
+        
+        while(x > 0) {
+            System.out.println(x);
+            if(x == 4) {
+                break;
+            }
+            x++;
+        }
+    }
+}
+
+break 및 continue 문 은 루프의 실행 흐름을 변경합니다. break
+문 은 루프를 종료하고 루프 바로 다음에 오는 문으로 실행을 전송합니다.
+
+public class Program {
+    public static void main(String[] args) {
+        for(int x=10; x<=40; x=x+10) {
+            if(x == 30) {
+                continue;
+            }
+            System.out.println(x); // 10,20,40 출력
+        }
+    }
+}
+
+continue 문 은 루프가 본문의 나머지 부분을 건너뛰도록 한 다음 반복하기 전에 즉시 조건을 다시 테스트합니다. 즉, 루프를 다음 반복으로 건너뜁니다.
+
+import java.util.Scanner;
+
+public class Program
+{
+	public static void main(String[] args) {
+		Scanner scanner = new Scanner(System.in);
+		int amount = scanner.nextInt();
+		for(int x = 1; x <= 3; x++){
+			amount -= 0.1 * amount;
+		}
+		System.out.println(amount);
+	}
+}
+
+loof문을 이용한 매달 10% 대출 상환 3개월 후 남은 금액 계산기

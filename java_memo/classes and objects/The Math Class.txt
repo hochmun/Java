@@ -1,0 +1,89 @@
+The Math Class
+
+JDK 는 여러 유용한 클래스를 정의하며, 그 중 하나는 수학 연산을 위한 사전 정의된 메서드를 제공 하는 Math 클래스입니다. 
+Math 클래스를 사용하기 위해 객체를 생성할 필요는 없습니다 . 
+액세스하려면 Math를 입력하기만 하면 됩니다. 
+및 해당 방법. Math.abs() 는 해당 매개변수의 절대값을 반환합니다.
+
+예시:
+public class Program {
+    public static void main(String[] args) {
+        int a = Math.abs(10); 
+        System.out.println(a); // 10
+        
+        int b = Math.abs(-20);
+        System.out.println(b); // 20
+    }
+}
+
+Math.ceil() 은 부동 소수점 값을 가장 가까운 정수 값으로 반올림합니다. 반올림된 값은 이중 으로 반환됩니다.
+
+public class Program {
+    public static void main(String[] args) {
+        double c = Math.ceil(7.342); // 8.0
+        System.out.println(c);
+    }
+}
+
+마찬가지로 Math.floor() 는 부동 소수점 값을 가장 가까운 정수 값으로 반올림합니다.
+
+public class Program {
+    public static void main(String[] args) {
+        double f = Math.floor(7.343); // 7.0
+        System.out.println(f);
+    }
+}
+
+Math.max() 는 매개변수 중 가장 큰 값을 반환합니다.
+
+public class Program {
+    public static void main(String[] args) {
+        int m = Math.max(10, 20);
+        System.out.println(m); // 20
+    }
+}
+
+반대로 Math.min() 은 가장 작은 매개변수를 반환합니다.
+
+public class Program {
+    public static void main(String[] args) {
+        int m = Math.min(10, 20);
+        System.out.println(m); // 10
+    }
+}
+
+Math.pow() 는 두 개의 매개변수를 사용하여 첫 번째 매개변수를 두 번째 매개변수의 거듭제곱으로 거듭제곱한 값을 반환합니다.
+
+public class Program {
+    public static void main(String[] args) {
+        double p = Math.pow(2, 3);
+        System.out.println(p); // 8.0
+    }
+}
+
+Math 클래스에는 제곱근 에 대한
+sqrt() , 사인에 대한 sin() for, 코사인에 대한 cos() for등을 포함하여 여러 가지 다른 메서드를 사용할 수 있습니다.
+
+예문:
+숫자를 입력받아 첫 번째 숫자를 두 번째 숫자의 거듭제곱으로 거듭제곱한 값을 반환하는 프로그램을 작성하세요.
+
+Sample Input
+2
+4
+
+Sample Output
+16.0
+
+import java.util.Scanner;
+
+class Main {
+   public static void main(String[] args) {
+       Scanner read = new Scanner(System.in);
+       int num1 = read.nextInt();
+       int num2 = read.nextInt();
+
+       //your code goes here
+       double num3 = Math.pow(num1,num2);
+       System.out.println(num3);
+   }
+}

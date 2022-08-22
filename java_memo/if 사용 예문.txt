@@ -1,0 +1,96 @@
+public class Program {
+    public static void main(String[] args) {
+        int x = 7;
+        if(x < 42) {
+            System.out.println("Hi");
+        }
+    }
+}
+
+< 보다 작은
+> 보다 큰
+!= 같지 않음
+== 같음
+<= 보다 작거나 같음
+>= 보다 크거나 같음
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 30;
+        if (age < 16) {
+            System.out.println("Too Young");
+        } else {
+            System.out.println("Welcome!");
+        }
+    }
+}
+
+else문은 if문의 조건이 false가 되면 실행 된다.
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 25;
+        if(age > 0) {
+            if(age > 16) {
+                System.out.println("Welcome!");
+            } else {
+                System.out.println("Too Young");
+            }
+        } else {
+            System.out.println("Error");
+        }
+    }
+}
+
+if문 안에 if문을 중첩 시킬수 있으며 원하는 만큼 중첩시킬수 있다.
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 25;
+        if(age <= 0) {
+            System.out.println("Error");
+        } else if(age <= 16) {
+            System.out.println("Too Young");
+        } else if(age < 100) {
+            System.out.println("Welcome!");
+        } else {
+            System.out.println("Really?");
+        }
+    }
+}
+
+중첩된 if-else 문을 사용하는 대신 else if 문을 사용할수 있다.
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 22;
+        int money = 800;
+        
+        if (age > 18 && money > 500) {
+            System.out.println("Welcome!");
+        }
+    }
+}
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 25;
+        int money = 100;
+        
+        if (age > 18 || money > 500) {
+            System.out.println("Welcome!");
+        }
+    }
+}
+
+public class Program {
+    public static void main(String[] args) {
+        int age = 25;
+        if(!(age > 18)) {
+            System.out.println("Too Young");
+        } else {
+            System.out.println("Welcome");
+        }
+    }
+}
+AND 논리 연산자(&&), OR 논리 연산자(||), NOT 논리 연산자(!())

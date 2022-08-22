@@ -1,0 +1,128 @@
+계승 Inheritance
+
+상속Inheritance은 한 클래스가 다른 클래스의 속성(메서드 및 변수)을 획득할 수 있도록 하는 프로세스입니다. 상속을 통해 정보는 보다 관리하기 쉽고 계층적인 순서로 배치됩니다.
+
+다른 클래스의 속성을 상속하는 클래스는 하위 클래스 subclass (파생 클래스 또는 자식 클래스라고도 함)입니다. 속성이 상속되는 클래스는 상위 클래스 superclass (기본 클래스 또는 상위 클래스)입니다.
+
+클래스에서 상속하려면 extends 키워드를 사용하십시오.
+이 예제에서는 Dog 클래스가 Animal 클래스에서 상속되도록 하는 방법을 보여줍니다.
+
+class Dog extends Animal {
+ // some code
+}
+
+여기서 Dog 는 하위 클래스 이고 Animal 은 상위 클래스 입니다.
+
+한 클래스가 다른 클래스에서 상속되면 상위 클래스의 모든 비공개 변수와 메서드를 상속합니다.
+
+예제:
+class Animal {
+  protected int legs;
+  public void eat() {
+    System.out.println("Animal eats");
+  }
+}
+
+class Dog extends Animal {
+  Dog() {
+    legs = 4;
+  }
+}
+
+보시다시피 Dog 클래스는 Animal 클래스에서 다리 변수를 상속합니다.
+이제 Dog 개체를 선언하고 해당 슈퍼클래스의 Eat 메서드를 호출할 수 있습니다.
+
+class Animal {
+    protected int legs;
+    public void eat() {
+        System.out.println("Animal eats");
+    }
+}
+
+class Dog extends Animal {
+    Dog() {
+        legs = 4;
+    }
+}
+
+class MyClass {
+    public static void main(String[ ] args) {
+        Dog d = new Dog();
+        d.eat(); // Animal eats
+    }
+}
+
+멤버를 하위 클래스에서만 볼 수 있도록 하는 보호 된protected 액세스 수정자를 상기하십시오.
+
+생성자는 멤버 메서드가 아니므로 하위 클래스에 상속되지 않습니다.
+그러나 상위 클래스의 생성자는 하위 클래스가 인스턴스화될 때 호출됩니다.
+
+class A {
+    public A() {
+        System.out.println("New A");
+    }
+}
+class B extends A {
+    public B() {
+        System.out.println("New B");
+    }
+}
+
+class Program {
+    public static void main(String[ ] args) {
+        B obj = new B();
+	/*
+	New A
+	New B
+	*/
+    }
+}
+
+super 키워드 를 사용하여 서브클래스에서 슈퍼클래스에 액세스할 수 있습니다 .
+예를 들어, super.var 는 수퍼클래스의 var 멤버에 액세스합니다.
+
+예문:
+자신의 사진 편집 응용 프로그램을 개발 중입니다.
+표준 무료 버전을 사용하면 사진에 텍스트를 그리고 쓸 수 있습니다. Pro 구독에는 효과를 사용하는 기능과 해상도를 변경하는 기능의 2가지 기능이 더 있습니다.
+주어진 코드를 완성/수정하여 Standard 클래스에서 Pro 클래스를 상속하고 주어진 모든 메서드 호출을 성공적으로 실행합니다.
+
+액세스 수정자 에 주의하십시오 .
+
+//be attentive to access modifiers
+class Standard {
+   protected void draw() {
+       System.out.println("Drawing");
+   }
+
+   protected void write() {
+       System.out.println("Writing");
+   }
+}
+//fix the class
+class Pro extends Standard {
+
+   protected void useEffects() {
+       System.out.println("Using Effects");
+   }
+
+   protected void changeResolution() {
+       System.out.println("Changing Resolution");
+   }
+}
+
+public class Main {
+   public static void main(String[] args) {
+       Standard standard1 = new Standard();
+       Pro pro1 = new Pro();
+       
+       //standard version
+       standard1.draw();
+       standard1.write();
+       
+       //Pro version
+       pro1.draw();
+       pro1.write();
+       pro1.useEffects();
+       pro1.changeResolution();
+   }
+}
