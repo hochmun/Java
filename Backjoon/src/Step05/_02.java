@@ -1,14 +1,29 @@
 package Step05;
+/*
+ * 날짜 : 2022/08/22
+ * 이름 : 심규영
+ * 내용 : 백준 5단계 2번째 문제, 셀프넘버
+ */
+import java.io.BufferedWriter;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 
 public class _02 {
-	public static void main(String[] args) {
-		int SelfNumber [] = new int [10000];
-		for(int i = 0; i < 10000; i++) {
-			SelfNumber[i] = i+1;
+	public static void main(String[] args) throws IOException {
+		BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
+		boolean[] check = new boolean[10001];
+		for(int i = 1; i <= 10000; i++) {
+			int n = d(i);
+			if(n <= 10000) {
+				check[n] = true;
+			}
 		}
 		for(int i = 1; i <= 10000; i++) {
-			if(d(i))
+			if(!check[i]) {
+				bw.write(i+"\n");
+			}
 		}
+		bw.close();
 	}
 
 
