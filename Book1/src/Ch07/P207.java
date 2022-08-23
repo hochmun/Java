@@ -8,8 +8,8 @@ public class P207 {
 	private String bookName;
 	private String author;
 	
-	public Book( ) { }
-	public Book(String bookName, String author) {
+	public void Book( ) { }
+	public void Book(String bookName, String author) {
 		this.bookName = bookName;
 		this.author = author;
 	}
