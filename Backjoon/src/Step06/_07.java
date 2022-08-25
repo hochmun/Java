@@ -1,5 +1,9 @@
 package Step06;
-
+/*
+ * 날짜 : 2022/08/25
+ * 이름 : 심규영
+ * 내용 : 백준 6단계 7번째 문제, 상수
+ */
 import java.util.Scanner;
 
 public class _07 {
@@ -14,5 +18,10 @@ public class _07 {
 			AB[i] = one * 100 + ten * 10 + hun;
 		}
 		sc.close();
+		if(AB[0] > AB[1]) {
+			System.out.println(AB[0]);
+		} else {
+			System.out.println(AB[1]);
+		}
 	}
 }
