@@ -21,5 +21,6 @@ public class _04 {
 			}
 			System.out.println(); // 하나의 테스트케이스가 끝난뒤 줄바꿈
 		}
+		sc.close();
 	}
 }
