@@ -28,5 +28,6 @@ public class FtoC {
 			double f = 9.0/5.0*c +32.0;
 			System.out.println("화씨온도는 "+f);
 		}
+		sc.close();
 	}
 }
