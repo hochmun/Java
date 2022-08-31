@@ -7,10 +7,12 @@ package Ch05;
  * 		학생 이름을 반환하는 메서드, P141
  * 		학생 이름을 부여하는 메서드, P142
  * 		Student 클레스에 main() 함수 추가하기, P144
+ * 		private 사용하기, P162
+ * 		get(), set() 메서드 사용하기, P164
  */
 public class Student {
 	int studentID;
-	String studentName;
+	private String studentName;
 	int grade;
 	String address;
 	
@@ -23,7 +25,7 @@ public class Student {
 	}
 	// 학생 이름을 부여하는 메서드, P142
 	public void setStudentName(String name) {
-		studentName = name;
+		this.studentName = name;
 	}
 	
 	// Student 클레스에 main() 함수 추가하기, P144
