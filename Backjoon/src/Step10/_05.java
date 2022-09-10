@@ -1,4 +1,4 @@
-package Step09;
+package Step10;
 /*
  * 날짜 : 2022/09/08
  * 이름 : 심규영
@@ -8,7 +8,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class _04 {
+public class _05 {
 	
 	static char[][] arr;
 	
