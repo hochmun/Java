@@ -34,3 +34,16 @@
 	- sub2. 자바 예외던지기 실습
 ## Ch08. Java API 클래스
 	- sub1. 자바 API Object 클래스 실습
+	- sub2. 자바 문자열 클래스 String 실습
+	- sub3. 자바 Wrapper 클래스 실습
+	- sub4. 자바 수학 클래스 실습
+	- sub5. 자바 날짜 클래스 실습
+	- sub6. 자바 정규표현식 클래스 실습
+## Ch09. Java 제네릭과 컬렉션 프레임워크
+	- sub1. 자바 제네릭 실습
+	- sub2. 자바 자료구조 Stack 실습
+	- sub3. 자바 자료구조 List 실습
+	- sub4. 자바 자료구조 Set 실습
+	- sub5. 자바 자료구조 Map 실습
+## Ch10. Java 입출력 스트림
+	- sub1. 자바 파일 입출력 스트림 실습
