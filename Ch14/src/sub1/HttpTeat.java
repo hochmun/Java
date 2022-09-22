@@ -19,14 +19,21 @@ public class HttpTeat {
 
 			FileWriter fw = new FileWriter("C:\\Users\\java2\\Desktop\\naver.html");
 			
+			// 파일 복사 시간 측정
+			long millisecond = System.currentTimeMillis();
+			
 			String line = null;
 			while((line = br.readLine()) != null) {
 				sb.append(line).append('\n');
 			}
 			
 			fw.write(sb.toString());
-			
 			fw.close();
+			
+			// 파일 복사 시간 출력
+			millisecond = System.currentTimeMillis() - millisecond;
+			System.out.println(millisecond+"milliseconds");
+			
 			br.close();
 		} catch (Exception e) {
 			e.printStackTrace();
