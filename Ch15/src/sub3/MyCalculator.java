@@ -1,5 +1,12 @@
 package sub3;
-
+/*
+ * 
+ * 
+ * 
+ * 1. 숫자입력시 빌더에 숫자 입력 기호는 양옆에 공백을 포함해서 입력
+ * 	1-1.
+ * 
+ */
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
