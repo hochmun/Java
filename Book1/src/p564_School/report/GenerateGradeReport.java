@@ -10,6 +10,7 @@ import p564_School.BasicEvaluation;
 import p564_School.Define;
 import p564_School.GradeEvaluation;
 import p564_School.MajorEvaluation;
+import p564_School.PassFailEvalustion;
 import p564_School.School;
 import p564_School.Score;
 import p564_School.Student;
@@ -18,7 +19,7 @@ import p564_School.Subject;
 public class GenerateGradeReport {
 	School school = School.getInstance();
 	public static final String TITLE = " 수강생 학점 \t\t\n";
-	public static final String HEADER = " 이름 | 학번 |필수과목| 점수 \n";
+	public static final String HEADER = " 이름 |   학번   |  필수과목  | 점수 \n";
 	public static final String LINE = "-----------------------------\n";
 	private StringBuffer buffer = new StringBuffer();
 	
@@ -53,7 +54,9 @@ public class GenerateGradeReport {
 			.append(student.getMajorSubject().getSubjectName()+"\t")
 			.append(" | ");
 			
+			getScoreGrade(student, subject.getSubjectId());
 			
+			buffer.append('\n').append(LINE);
 		}
 	}
 	
@@ -62,18 +65,21 @@ public class GenerateGradeReport {
 		int majorId = student.getMajorSubject().getSubjectId();
 		
 		GradeEvaluation[] gradeEvaluation = {new BasicEvaluation(), 
-				new MajorEvaluation()};
+				new MajorEvaluation(), new PassFailEvalustion()};
 		
 		for (int i = 0; i < scoreList.size(); i++) {
 			Score score = scoreList.get(i);
 			if (score.getSubject().getSubjectId() == subjectId) {
 				String grade;
-				if (score.getSubject().getSubjectId() == majorId) {
-					grade = gradeEvaluation[Define.SAB_TYPE].getGrade(score.getPoint());
+				if (score.getSubject().getGradeType() == Define.PF_TYPE) {
+					grade = gradeEvaluation[Define.PF_TYPE].getGrade(score.getPoint());
 				} else {
-					grade = gradeEvaluation[Define.AB_TYPE].getGrade(score.getPoint());
+					if (score.getSubject().getSubjectId() == majorId) {
+						grade = gradeEvaluation[Define.SAB_TYPE].getGrade(score.getPoint());
+					} else {
+						grade = gradeEvaluation[Define.AB_TYPE].getGrade(score.getPoint());
+					}
 				}
-				
 				buffer.append(score.getPoint())
 				.append(":")
 				.append(grade)

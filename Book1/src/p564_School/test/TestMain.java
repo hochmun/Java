@@ -1,7 +1,12 @@
 package p564_School.test;
-
+/*
+ * 날짜 : 2022/09/24
+ * 이름 : 심규영
+ * 내용 : 테스트 클래스
+ */
 import p564_School.Define;
 import p564_School.School;
+import p564_School.Score;
 import p564_School.Student;
 import p564_School.Subject;
 import p564_School.report.GenerateGradeReport;
@@ -10,6 +15,7 @@ public class TestMain {
 	School goodSchool = School.getInstance();
 	Subject korean;
 	Subject math;
+	Subject dance;
 	
 	GenerateGradeReport gradeReport = new GenerateGradeReport();
 	
@@ -26,9 +32,15 @@ public class TestMain {
 	public void creatSubject() {
 		korean = new Subject("국어", Define.KOREAN);
 		math = new Subject("수학", Define.MATH);
+		dance = new Subject("방송 댄스", Define.DANCE);
+		
+		// 기본 타입은 전공과목 여부에 따라 AB_TYPE, SAB_TYPE 나눠서 지정할 필요 없음
+		// 그외 다른 타입은 타입 지정 필요
+		dance.setGradeType(Define.PF_TYPE);
 		
 		goodSchool.addSubject(korean);
 		goodSchool.addSubject(math);
+		goodSchool.addSubject(dance);
 	}
 	
 	public void createStudent() {
@@ -56,11 +68,32 @@ public class TestMain {
 		math.register(student4);
 		math.register(student5);
 		
+		dance.register(student1);
+		dance.register(student2);
+		dance.register(student3);
+		
 		addScoreForStudent(student1, korean, 95);
 		addScoreForStudent(student1, math, 56);
+		addScoreForStudent(student1, dance, 95);
+
+		addScoreForStudent(student2, korean, 95);
+		addScoreForStudent(student2, math, 95);
+		addScoreForStudent(student2, dance, 85);
+		
+		addScoreForStudent(student3, korean, 100);
+		addScoreForStudent(student3, math, 88);
+		addScoreForStudent(student3, dance, 55);
+		
+		addScoreForStudent(student4, korean, 89);
+		addScoreForStudent(student4, math, 95);
+		
+		addScoreForStudent(student5, korean, 85);
+		addScoreForStudent(student5, math, 56);
+		
 	}
 	
 	public void addScoreForStudent(Student student, Subject subject, int point) {
-		
+		Score score = new Score(student.getStudentId(), subject, point);
+		student.addSubjectScore(score);
 	}
 }

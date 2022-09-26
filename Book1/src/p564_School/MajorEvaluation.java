@@ -8,7 +8,6 @@ public class MajorEvaluation implements GradeEvaluation {
 
 	@Override
 	public String getGrade(int point) {
-		// TODO Auto-generated method stub
 		String grade;
 		if (point >= 95 && point <= 100) {
 			grade = "S";
