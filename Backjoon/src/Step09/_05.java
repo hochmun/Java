@@ -6,7 +6,7 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /*
- * 날짜 : 2022/09/26
+ * 날짜 : 2022/09/27
  * 이름 : 심규영
  * 내용 : 백준 9단계 5번째 문제, 통계학, 2108
  * 
@@ -42,26 +42,41 @@ public class _05 {
 			sum += x;
 		}
 		
-		// 산술평균
-		int avg = sum / N ;
+		// 산술평균 소수점 이하 첫째 자리에서 반올림한 값
+		int avg = 0;
+		if (sum >= 0) {
+			double a = sum;
+			double b = a / N;
+			double c = Math.round(b);
+			avg = (int) c;
+		} else if (sum < 0) {
+			double a = Math.abs(sum);
+			double b = a / N;
+			double c = Math.round(b);
+			double d = 0 - c;
+			avg = (int) d;
+			
+			
+			//avg = 0 - Math.round(Math.abs(sum) / N);
+		}
 		
-		// 최빈값
+		// 최빈값 중복시 가장 낮은 값부터 두번째 값
 		int max = -1;
 		int maxindex = 0;
-		boolean swich;
+		int maxindex2 = 4001;
 		for (int i = 0; i < arr2.length; i++) {
 			if(arr2[i] > max) {
 				max = arr2[i];
 				maxindex = i - 4000;
-			}
-			if(arr2[i] == max) {
-				swich = true;
+				maxindex2 = 4001;
+			} else if (arr2[i] == max) {
+				if ((i - 4000) < maxindex2) {
+					maxindex2 = i - 4000;
+				}
 			}
 		}
-		if (swich) {
-			for (int i = 0; i < arr.length; i++) {
-				if (arr[i] )
-			}
+		if (maxindex2 != 4001) {
+			maxindex = maxindex2;
 		}
 		
 		
@@ -78,6 +93,7 @@ public class _05 {
 		// 범위
 		int maxmin = arr3.get(N-1) - arr3.get(0);
 		
+		// 출력
 		System.out.println(avg);
 		System.out.println(mid);
 		System.out.println(maxindex);
