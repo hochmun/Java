@@ -1,4 +1,4 @@
-package sub6;
+package sub06;
 /*
  * 날짜 : 2022/09/27
  * 이름 : 심규영

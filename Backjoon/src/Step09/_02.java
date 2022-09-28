@@ -3,7 +3,7 @@ package Step09;
  * 날짜 : 2022/09/13
  * 이름 : 심규영
  * 내용 : 백준 9단계 2번째 문제, 수 정렬하기 2, 2751
- * 		카운트 정령 알고리즘
+ * 		카운트 정렬 알고리즘
  */
 import java.io.BufferedReader;
 import java.io.IOException;

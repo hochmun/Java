@@ -1,4 +1,4 @@
-package sub6;
+package sub06;
 
 import java.util.Arrays;
 import java.util.Random;

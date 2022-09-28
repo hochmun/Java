@@ -1,4 +1,4 @@
-package sub6;
+package sub06;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
