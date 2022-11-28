@@ -45,6 +45,31 @@ public class _10814 {
 	}
 	
 	public static void merge_sort(int[] arr1, String[] arr2, int start, int end) {
+		if (start < end) {
+			int middle = (start + end) / 2;
+			
+			merge_sort(arr1, arr2, start, middle);
+			
+			merge_sort(arr1, arr2, middle+1, end);
+			
+			
+		}
+	}
+	
+	public static void marge_logic(int[] arr1, String[] arr2, int start, int middle, int end) {
+		int[] tempArr = new int[(end-start)+1];
+		String[] tempArr2 = new String[(end-start)+1];
+		int i = start;
+		int r = middle+1;
+		int idx = 0;
+		
+		if(end - start < 2) {
+			if(arr1[start] > arr1[end]) {
+				tempArr[0] = arr1[end];
+				tempArr2[0] = arr2[end];
+			}
+		}
 		
 	}
+	
 }
